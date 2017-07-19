@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!--
+*************************************************************************
+Released under MIT License : http://karimcheratt.me.pn/license.txt
+ ***************************************************************************
+-->
+<html>
+<head>
+    <title>User Profile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <!-- Global Style -->
+    <link rel="stylesheet" type="text/css"  href="../../all/css/frame.css"/>
+    <link rel="stylesheet" type="text/css" href="../../all/css/form.css"/>
+    
+    <!-- Adminer style -->
+    <link rel="stylesheet" type="text/css" href= "../../all/css/dashboard.css"/>
+    
+    <script type="text/javascript" 
+            src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    
+<!--    <script type="text/javascript" 
+            src="http://code.jquery.com/shorten.1.0.js"></script>-->
+    
+</head>
+<body>
+    
+<!-- HEADER -->
+<div class="headbar">
+    <div class="header">
+        
+        <h1 class="logo">
+            <a href="../visitor/welcome.html">Doxa</a>
+            <span>demo</span>
+        </h1>
+        <!-- Header Link -->
+        <ul class="headlink">
+            <li><a href="../../index.html">Sitemap</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="../visitor/login.html" 
+                   style="border:1px solid #ddd;">Deconnection</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- CONTAINER -->        
+<div class="container">
+    
+    <!--Module Navigation-->
+    <div id="modulenav" class="hnav">
+        <input id="getmod1" value="module-opinion" name="module" 
+               type="radio" checked/>
+        <label for="getmod1">Mes Participations</label>
+
+        <input id="getmod2" value="module-profile" name="module" 
+               type="radio"/>
+        <label for="getmod2">Mon Profile</label>
+        
+    </div>
+    
+    <!-- Reaction Listing-->
+    <div id="module-opinion" class="module">
+        
+        <!--filtre-->
+        <div class="module-ctrl">
+            <!-- sort reactions -->
+            <div class="sort">
+                <span>Filtrer par&nbsp;:&nbsp;</span>
+                <form id="sort-react">
+                <div class="sortby">
+                <select name="sort-1">
+                    <option  selected disabled>Date</option>
+                    <option value="sort-1-2">Plus R&eacute;cent</option>
+                    <option value="sort-1-2">Plus Ancien</option>
+                </select>
+                </div>
+                <input type="submit" value="ok"/>                        
+                </form>
+            </div>
+        </div>
+
+        <!-- list -->
+        <div id="opinion-list" class="grid-list">
+
+        </div>
+    </div>
+    
+    <!--profile setting--> 
+    <div id="module-profile" class="module">
+        
+        
+        <div class="form63">            
+            <!--user data information-->
+            <div class="form63-6">
+                <div class="userform">
+                
+                <h2>Generales</h2>
+                <form id="userform">
+                    
+                    <label class="label">Prénom</label>
+                    <input type="text" name="username" class="txt" value="" />
+                    
+                    <label class="label">Nom</label>
+                    <input type="text" name="username" class="txt" value="" />
+
+                    <label class="label">Courriel</label>
+                    <input type="text" name="username" class="txt" value="" />
+                    
+                    <!--send form-->
+                    <div class="sendform">
+
+                        <input type="submit" value="Enregistrer Profile" 
+                               name="submit" class="bt greenthm"/>
+
+                        <div class="formload">
+                            <span class="icon-load"></span>
+                        </div>
+                    </div> 
+                </form>
+                
+                    <h2>Authentification</h2>
+                    <form id="userauth">
+                        
+                        <label class="label">Ancien Mot de Passe</label>
+                        <input type="text" name="username" class="txt" value="" />
+                        
+                        <label class="label">Nouveau Mot de passe</label>
+                        <input type="text" name="username" class="txt" value="" />
+
+                        <label class="label">Nouveau Mot de passe</label>
+                        <input type="text" name="username" class="txt" value="" />
+                        
+                        <!--send form-->
+                        <div class="sendform">
+
+                            <input type="submit" value="Enregistrer Mot de Passe" 
+                                   name="submit" class="bt greenthm"/>
+
+                            <div class="formload">
+                                <span class="icon-load"></span>
+                            </div>
+                        </div> 
+                    </form>
+                </div><!-- end userform -->
+            </div>
+            
+            <!--user photo -- >
+            <div class="form63-3">
+                
+                <div class="userphoto">
+                    <img id="userphoto" src="../../all/icon/user.png"/>
+                </div>
+                
+                <!-- Select File-- >
+                <div class="filediv">
+                    <form id="photoform" class="selectfile" name="banner" target="recepteur"
+                      method="POST"  enctype="multipart/form-data"
+                      data-action="acton.php" 
+                      data-callback="setImage">
+
+                    <input type="button" name="browse" value="Changer" 
+                           class="bt blthm"/>
+                    <input type="file" name="file" class="file" />
+                        
+                    <input type="submit" name="save" value="Enregistrer" 
+                           class="bt greenthm"/>
+                    <input type="reset" name="cancel" value="Annuler" class="bt defaultbt"/>
+                    
+                    </form>
+                </div>
+            </div><!-- user photo -->
+        
+        </div><!-- end grid-63 -->
+        
+    </div><!-- end module -->
+    
+</div><!-- end container -->
+
+<!-- FOOTER -->
+<div id="foot" class="footer">
+   <ul>
+        <li>
+            <a href="http://www.doxa.me.pn/license.txt">
+                &copy; Karim Cheratt
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- POP -->
+<div id="div-filter" style="display:none">
+    <div id="filter"></div>
+</div>
+
+<script type="text/javascript" src="../data/data-user.js"></script>
+<script type="text/javascript" src="../js/user.js"></script>
+
+<script>
+    $(document).ready(function(){
+        
+        var old = null;        
+        $("#modulenav").children('input[name="module"]').each(function() {
+            
+            this.onchange = function(){   
+                
+                $(this).toggleClass("check");
+                $(old).toggleClass("check");                                      
+                document.getElementById(old.value).style.display = "none";
+                document.getElementById(this.value).style.display = "block";
+                old = this;
+            };
+            
+            if(this.checked){
+                old = this;
+                $(this).toggleClass("check");
+            }else{
+                document.getElementById(this.value).style.display = "none";
+            }
+        });
+        
+        // close editor (X)
+        $(".close").each(function(){            
+            this.onclick = function(){
+                document.getElementById('div-filter').style.display = "none";
+                $(this).parent().hide();
+                var showDiv = this.getAttribute("data-show");            
+                if(showDiv){
+                    document.getElementById(showDiv).style.display = "block";                
+                };
+            };
+        });
+        
+        
+        
+    });
+</script>
+
+</body>
+</html>

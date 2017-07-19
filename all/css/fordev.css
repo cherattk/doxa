@@ -1,0 +1,68 @@
+/******************
+    FOR DEV ONLY 
+******************/
+/**/
+#switcher{
+    position:absolute;
+    top:15px;
+    left:15px;
+    padding:0;
+    z-index:100;
+    text-align:center;
+    overflow:hidden;
+    cursor:pointer;
+}
+#switcher:hover > div{
+    display:block;
+}
+#switcher > div{
+    background:#fff;
+    padding:1px;
+    border:1px solid #ccc;   
+    display:none;
+}
+#switcher p{
+    margin:0;
+    text-align:center;
+}
+#switcher p:hover{
+    background:#eee;
+}
+#switcher input{
+    position: absolute;
+    top:-20px;
+    left:0;
+    z-index:0;
+}
+#switcher label{
+    position: relative;
+    display: block;
+    padding:10px;
+    cursor:pointer;
+}
+#switcher label:hover{
+    background:#eee;
+}
+#switcher input.check + label{
+    background: #444;
+    color:#fff;
+}
+#switcher label span{
+    display:none;
+    width:25px;
+    height:25px;
+    position: absolute;
+    top:10px;
+    right:0;
+}
+/*
+#switcher input.check + label span.icon-check{
+    display:block;
+}
+#switcher input.check + label:hover{
+    text-decoration: none;
+}
+#switcher label:hover{
+    text-decoration: underline;
+}       
+*/ 

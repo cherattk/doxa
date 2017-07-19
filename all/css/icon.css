@@ -1,0 +1,24 @@
+.icon-arrow-up{
+    background: url('../icon/arrow-up.png') 0 0 no-repeat transparent;
+}
+.icon-menu{    
+	background:url('../icon/menu.png') 30px 12px no-repeat #fff;
+}
+.icon-check{    
+    background:url("../icon/check.png");
+}
+.icon-load{    
+    background:url('../icon/wait.gif') 130px 5px no-repeat transparent;
+}
+.icon-arrow-left{	
+    background:url(../icon/arrow-right.png) left top no-repeat transparent;
+}
+.icon-arrow-down{
+    background:url(../icon/arrow-down.png)  left top no-repeat transparent;
+}
+.icon-flag{
+    background:url('../icon/flag.png') center center no-repeat;
+}
+icon-heart{
+    background:url('../icon/heart.png') center center no-repeat;
+}

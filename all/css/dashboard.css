@@ -1,0 +1,211 @@
+/**************************
+    styling adminer space
+***************************/
+.headbar{
+	border-bottom:1px solid #ccc;
+	box-shadow: 0 0 2px #ddd;;
+}
+#modulenav{	
+	
+}
+/*** module space ***/
+.module{
+	text-align:left;
+	padding:20px 20px 0 20px;
+	background:#fff;	
+	border:1px solid #ccc;
+	box-shadow:0 1px 1px #ddd;
+	/*
+	*/
+}
+.module h2{
+	background: #E5EEF7;
+	padding:20px;
+	color: #0C1F56;
+	text-transfor:uppercase;
+	font-size:20px;
+}
+.module-ctrl{
+	padding:15px;
+	height:40px;
+	margin-bottom:30px;
+	position:relative;
+	background:#f5f5f5;
+}
+.module-ctrl button{
+	float:right;
+	padding:10px 20px;
+}
+.module-ctrl .sort{
+	padding:0;
+	margin:0;
+}
+.module-ctrl .sort span{
+	float:left;
+	margin:12px 10px 0 0;
+	font-weight:bold;
+}
+.module-ctrl .sortby{
+	display:inline-block;
+	margin:5px 5px 5px 0;
+	border:1px solid #bbb;
+	background:#fff;
+}
+.module-ctrl .sort input[type="submit"]{
+	margin-top:0;/*overload default  in form.css */
+	padding:8px 15px;
+	border:1px solid #aaa;
+	background:#eee;
+	box-shadow:0 1px 0 #fff inset;
+	font-weight:bold;
+	margin-left:5px;
+	border-radius:3px;
+}
+.module-ctrl .sortby label{
+	font-weight:bold;
+	padding:8px;
+}
+.module-ctrl .sortby select{
+	margin:0;
+	border:0;
+}
+
+/******** Liste Widget ************/
+.grid-list{
+	padding-top:15px;
+}
+.grid{
+    padding:0 20px 30px 20px;
+    border-bottom: 3px solid #69F; /* #6699FF */
+    margin-bottom: 20px;
+}
+.grid-desc{
+	border-collapse:collapse;
+}
+.grid-desc td{
+	vertical-align:top;
+	line-height:1.8;
+}
+.grid-desc label{	
+	font-weight:bold;
+	width:80px;
+	display:block;
+	margin-right:10px;
+}
+.grid-desc label:after{
+	content:':';
+	float:right;
+
+}
+.grid-content{
+	margin-top:15px;
+	border-top:1px dotted #bbb;
+	displa:none;
+}
+.grid-ctrl{
+	margin-top:20px;
+}
+.grid-ctrl button{
+	margin-right:10px;
+	text-transform:lowercase;
+}
+
+/* configuration div */
+#configform label{
+	max-width:100px;
+}
+
+/*****************
+    topic editor 
+******************/
+.editor{
+	position:relative;
+	padding:20px;
+	width:100%;
+	margin:-95px auto auto -21px;
+	z-index:1100;	
+	background:#fff;
+	border:1px solid #ccc;
+	box-shadow:0 0 20px #ccc;
+	overflow:hidden;
+	border-radius:4px;
+}
+.editor span.close{
+	top:40px;
+	right:40px;
+}
+.editor .field{
+	padding:20px 30px;
+	text-align:left;
+}
+.editor h1{
+	margin:0;
+	padding:20px;
+	text-align:center;
+	background:#eee;
+	border:1px solid #ddd;
+	border-radius:3px;
+}
+.editor .txt{
+	width:98%;
+}
+.editor textarea{
+	margin-bottom:30px;
+}
+
+.selectctg{
+	borde:1px solid;
+	position:relative;
+}
+.selectctg .menu{
+	position:absolute;
+	top:41px;
+	left:240px;
+	border:1px solid #ddd;
+}
+.selectctg .menu ul{
+	display:block;
+}
+.selectctg .menu label{
+	padding:11px 20px;
+}
+.form63{
+	padding:20px 20px 50px 20px;
+	margin:auto;
+}
+.form63 > div{
+	display:inline-block;
+	vertical-align:top;
+}
+.form63-6{
+	width:60%;
+	
+	/*** if photo 
+	padding-left:5%;
+	border-left:1px solid #ccc;
+	**/
+}
+.form63-3{
+	width:28%;
+
+}
+.module-profile > div{
+	padding:20px;
+}
+.userform form{
+	margin-bottom:50px;
+}
+.userform .txt{
+	width:95%;
+}
+.userphoto{
+	height:180px;
+	width:180px;
+	padding:5px;
+	border:1px solid #ccc;
+	border-radius:5px;
+	background:#fff;
+}
+.userphoto img{
+	background:#eee;
+}

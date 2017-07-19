@@ -1,0 +1,432 @@
+.topic{
+	padding:25px 40px;
+    position:relative;    
+    margin:0 auto 50px auto;
+    overflow:hidden;
+	font-size:1.3em;
+	min-height:250px;
+}
+.empty-flow{
+    padding:20px;
+}
+.empty-flow p , .empty-subflow p{
+    font-weight:bold;
+	text-align:center;
+	font-family:Arial,Helvetica,sans-serif;
+}
+
+.topic label{
+	font-weight:bold;
+	color:#000;
+	margin-right:10px;
+	font-family:Arial, Helvetica,sans-serif;
+}
+/*********** Flow **************/
+.flow {
+	/* margin:0 auto; */
+	padding: 2px;
+	text-align:left;
+	overflow:hidden;
+}
+.flow > div{
+	display:none;
+}
+.flownav{
+	text-align:center;
+	margin:30px 0 25px 0;
+}
+.flownav li{
+	display:inline-block;
+	vertical-align:top;
+	width:49%;
+	text-align:center;
+}
+.flownav input{
+	display:none;
+}
+.flownav label{
+	position:relative;
+	width:250px;
+	display:block;
+	position:relative;
+	padding:15px 0;
+	margin:0 auto;
+	cursor:pointer;	
+	font-weight:bold;
+	border:1px solid #ccc;
+	background:#e5e5e5;
+}
+.flownav label > span{
+	position:absolute;
+	top:44px;
+	left:44%;
+	width:30px;
+	height:30px;
+	z-index:10;
+	padding:0;
+	margin:0;
+	display:none;
+}
+.flownav label:hover{
+	background:#ddd;
+}
+.flownav input:checked + label{
+	cursor:default;
+	background:#fff;
+    box-shadow:0 1px 0 #e5e5e5;
+    border-color:#bbb;
+	/*
+	color:#fff;
+	text-shadow:0 0 1px #222;
+	border-color:#1C54FC;
+	background:#3466FD;
+	*/
+}
+.flownav input:checked + label > span{
+	display:block;
+}
+/**************** green ***********
+.flownav input[value="flowright"].check + label{
+	color:#fff;
+    text-shadow:0 0 1px #333;
+    border-color:#3CAC3C;
+    background-color:#43BF43;
+}
+
+/***** red ***************
+.flownav input[value="flowleft"].check + label{
+	color:#fff;
+	text-shadow:0 0 1px #333;
+    background:#FF5930;
+    border-color:#E6502B;
+	border-top-color:#FF5930;
+}
+*/
+
+/* argument flow */
+.arg{
+	padding:15px;
+	margin:0 0 20px 0;
+	position:relative; /* for > span */
+}
+.flowhead.open + .subflow{
+	display:block;
+}
+.flowhead.open .plus{
+	display:none;
+}
+.flowhead.open .icon{
+	border-color:transparent;
+}
+.flowhead.open h2,
+.subflow h3{
+	background: rgba(175, 182, 245, 0.26);
+	border: 1px solid #D7E1F5;
+}
+.arg h2{
+	margin:0;
+	padding:20px 80px 20px 20px;
+	line-height:1.4;
+	font-size:18px;
+	position:relative;/* for icon */
+	cursor:pointer;
+	font-weight:normal;
+	border:1px solid transparent;
+}
+.arg h2:hover{
+	background: #E1E4FD;
+}
+.arg h2 .icon{	
+	position:absolute;
+	top:15px;
+	right:25px;
+	width:28px;
+	height:28px;
+	background:#fff;
+	border:1px solid #ccc;
+	border-radius:15px;
+}
+.arg h2 .plus,
+.arg h2 .minus{
+	position:absolute;
+	border-radius:5px;
+	background:#444;
+}
+.arg h2 .plus{
+	top:6px;
+	left:12px;
+	width:4px;
+	height:16px;
+}
+.arg h2 .minus{
+	top:12px;
+	left:6px;
+	width:16px;
+	height:4px;
+}
+.arg h2 span.icon-arrow-up{
+	display:none;
+}
+.arg h2.open + #reactor{
+	display:block;
+}
+.arg .subflow{	
+	display:none;
+	padding:20px 0;
+}
+.subflow button.getmore{
+	padding:10px;
+	display:block;
+	width:150px;
+	margin:50px auto 30px auto;
+	border:1px solid #ccc;
+	background:#eee;
+	cursor:pointer;
+	text-transform:uppercase;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.subflow button.getmore:hover{
+	background:#e5e5e5;
+}
+.subflow ul{
+	text-align:center;
+	background:#fff;
+	position:relative;
+}
+
+.subflow ul li{
+	display:inline-block;
+	vertical-align:top;
+	width:47%;
+	overflow:hidden;
+	text-align:center;
+	position:relative;/* for add-button */
+}
+.subflow ul li.splitline{
+	border-left:1px dotted #d5d5d5;
+	position:absolute;
+	top:0;
+	left:50%;
+	height:100%;
+	width:0;
+	margin:0;
+}
+.subflow li.in-arg{	
+	margin-right:2%;
+}
+.subflow li.out-arg{
+	margin-left:2%
+}
+.subflow li > span{
+	width:34px;
+	height:34px;
+	position:absolute;
+	top:8px;
+	right:8px;
+	border-radius:3px;
+	cursor:pointer;
+	border:1px solid #C4CEE8;
+	background-color:#fff;
+}
+.subflow li > span:hover span{
+	display:block;
+}
+.subflow li > span span{
+	position:absolute;
+	width:250px;
+	padding:10px 0;
+	right:50px;
+	top:-1px;
+	font-weight:bold;
+	background:white;
+	border:1px solid #bbb;
+	text-transform:uppercase;
+	display:none;
+}
+.subflow h3{
+	margin:0 0 20px 0;
+	padding:17px 0;
+	position:relative;
+	font-size:1em;
+	text-transform:uppercase;
+}
+.flow .arg-content{	
+	padding:40px 5px 15px 5px;
+}
+.flow .arg-content label{	
+    text-align:left;
+    display:block;
+    font-weight:bold;
+    padding:0;
+    font-size:1.3em;
+    line-height:1.5;
+}
+.flow .arg-content p{
+    margin:10px 0 0 0;
+    color:#000;
+    font-size:16px;
+   text-align:justify;
+}
+.arg-content .vote{
+    float:right;
+    margin-top:-7px;
+}
+.flow .arg-content .vote span{
+    width:20px;
+    height:20px;
+    display:inline-block;
+    margin:0;
+    padding:5px 7px;
+    border:1px solid #e5e5e5;
+    cursor:pointer;
+    border-radius:3px;
+}
+.flow .arg-content .vote span:hover{
+    background-color:#ddd;
+    border-color:#ccc;
+}
+.closeform{
+    float:right;
+    margin-top:-10px;
+    border:1px solid #bbb;
+    padding:8px 13px;
+    font-weight:bold;
+    cursor:pointer;
+    border-radius:3px;
+    background:#eee;
+}
+.closeform:hover{
+    background:#444;
+    color:#fff;
+    border-color:transparent;
+}
+.openform{
+    display:block;
+    width:200px;
+    margin:0 auto;
+    padding:13px 20px;    
+    cursor:pointer;    
+    color:#fff;
+    text-transform:uppercase;
+    font-size:12px;
+    font-weight:bold;
+    letter-spacing:1px;
+	text-align:center;
+}
+.openform .iconmoon{    
+    font-size:1.8em;
+    position:relative;
+    text-shadow:0 0 2px #555;
+}
+
+/********************************************/
+#editdiv{
+    border-bottom:1px solid #bbb;
+    padding-bottom:30px;
+}
+.editor{
+    margin:0 auto;
+    padding:0 30px 30px 30px;
+    position:relative;
+	text-align:left;
+	border-radius:4px;
+}
+.editor h1{
+    margin:0 0 20px 0;
+    padding:0 0 20px 0;
+    text-align:left;
+    font-size:22px;
+    border-bottom:1px solid #ddd;
+}
+#reactor{	
+	position:relative;/* for close */
+	display:none;
+	margin:20px 5px;
+	padding:1px;
+	border:1px solid #ddd;
+}
+#reactor .editor{
+	background:#f8f8f8;
+	box-shado:0 1px 0 #fff inset;
+}
+.flowhead.open > #reactor.show{
+	display:block;
+}
+.checkopt{
+	padding:30px 0;
+	border-bottom: 2px dotted #aaa;
+}
+.checkopt input[type="radio"]{
+    display: none;
+}
+.checkopt label{	
+    display:inline-block;
+    min-width:80px;
+	margin:0 20px 0 0;
+	padding:10px 40px;
+	border:1px solid #bbb;
+	box-shadow:0 1px 0 #fff inset, 0 1px 0 #eee;
+	background:#eee;
+	cursor:pointer;
+	text-align:center;
+    position:relative; /* for img:check*/
+	font-weight:bold;
+	border-radius:3px;
+}
+.checkopt label:hover{
+	background:#e5e5e5;
+}
+.checkopt label span{
+    position:absolute;
+    top:8px;
+    right:10px;
+		width:20px;
+		height: 20px;
+		margin: 0;
+    display:none;
+}
+.checkopt label:active{
+	color:#fff;   
+	background: #1A75D0;    
+	border: 1px solid #265AB1;    
+	box-shadow: 0 0 1px #23498C inset , 0  0 5px #407AE0 inset;
+    text-shadow:0 0 1px #222;
+}
+.checkopt input:checked + label.pos{
+	color:#fff;   
+	background: #1770CA;    
+	border: 1px solid #094D92;
+    
+	box-shadow: 0 1px 1px #2457AF inset , 0 0 1px #1B50AB inset, 0  0 5px #3D71CC inset;
+    text-shadow:0 0 1px #222;
+}
+.checkopt input:checked + label{	
+    text-shadow:0 0 1px #000;
+}
+.checkopt input:checked + label:hover{
+	cursor:default;
+}
+.checkopt input:checked + label span{
+    display:block;
+}
+.checkopt label:active span{
+	display:block;
+}
+.checkopt input:checked + label[for="check-y"]{
+    border-color:#369B36;
+    background:#43BF43;
+    color:#fff;
+    box-shadow:none;
+}
+.checkopt input:checked + label[for="check-n"]{
+    border-color:#CF4B29;
+    background:#FF5C33;
+    color:#fff;
+    box-shadow:none;
+}
+.editor input ,
+.editor textarea{
+	width:97%;
+	display:block;
+}

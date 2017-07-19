@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!--
+*************************************************************************
+Released under MIT License : http://karimcheratt.me.pn/license.txt
+ ***************************************************************************
+-->
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <!-- Global Style -->
+    <link rel="stylesheet" type="text/css"  href="../../all/css/frame.css"/>
+    <link rel="stylesheet" type="text/css" href="../../all/css/form.css"/>
+    
+    <!-- Adminer style -->
+    <link rel="stylesheet" type="text/css" href= "../../all/css/dashboard.css"/>
+    
+    <script type="text/javascript" 
+            src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    
+<!--    <script type="text/javascript" 
+            src="http://code.jquery.com/shorten.1.0.js"></script>-->
+    
+</head>
+<body>
+    
+<!-- HEADER -->
+<div class="headbar">
+    <div class="header">
+        
+        <h1 class="logo">
+            <a href="../visitor/welcome.html">Doxa</a>
+            <span>demo</span>
+        </h1>
+        <!-- Header Link -->
+        <ul class="headlink">
+            <li><a href="../../index.html">Sitemap</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="../visitor/login.html" 
+                   style="border:1px solid #ddd;">Deconnection</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- CONTAINER -->        
+<div class="container">
+    
+    <!--Module Navigation-->
+    <div id="modulenav" class="hnav">
+        <input id="getmod1" value="module-topic" name="module" 
+               type="radio"
+               checked/>
+        <label for="getmod1">D&eacute;bats</label>
+
+        <input id="getmod2" value="module-position" name="module" 
+               type="radio"/>
+        <label for="getmod2">Positions</label>
+        
+        <input id="getmod3" value="module-react" name="module" 
+               type="radio"/>
+        <label for="getmod3">R&eacute;actions</label>
+        
+    </div>
+    
+    <!-- Debat Listing -->
+    <div id="module-topic" class="module">
+        
+        <!-- topic list -->
+        <div id="topic-listing">
+            
+            <div class="module-ctrl">
+                
+                <!-- add new topic -->
+                <button id="addtopic" class="bt blthm">
+                    Nouveau Debat
+                </button>
+                
+                <!-- sort topics-->
+                <div class="sort">
+                    <span>Filtrer par Catégorie : </span>
+                    <form id="sort-topic">
+                    <div class="sortby">
+                    <select name="sort-1">
+                        <option value="culture">Culture</option>
+                        <option value="sport">Sport</option>
+                        <option value="tech">Technologie</option>
+                        <option value="divers">Divers</option>
+                    </select>
+                    </div>                    
+                    <input type="submit" value="chercher"/>                        
+                    </form>
+                </div>
+            </div>
+            
+            <div id="topic-list" class="grid-list">
+                <!--Dynamic Content--> 
+            </div>
+        </div>
+        
+        <!--Topic Editor-->
+        <div id="topic-editor" class="editor" style="display: none">
+             <span id="closeditor" class="close" 
+                   data-show="topic-listing">X</span>
+             
+            <h1>Topic Editor</h1>
+            <!-- DEBAT CONTENT -->
+            <div class="field">                
+            <form id="topicform">
+                <input type="hidden" name="topic"/>
+                <input type="hidden" name="leftchoice" value="left"/>
+                <input type="hidden" name="rightchoice" value="right"/>
+                
+                <div class="selectctg">
+                    <div id="tpctg" class="menu">
+                        <label>Categorie</label>
+                        <ul class="block-arrow top-arrow">
+                            <li><label>Categorie 1</label></li>
+                            <li><label>Categorie 2</label></li>
+                            <li><label>Categorie 3</label></li>
+                        </ul>
+                    </div>                    
+                    
+                    <label class="label">Categorie</label>
+                    <input type="text"  class="txt" name="categorie" 
+                           maxlength="20"
+                           style="width:200px"/>
+                </div>
+                
+                
+                <label class="label">Question du Debat</label>
+                <input type="text" class="txt" name="question"/>
+                
+                <label class="label">Context</label>
+                <textarea class="txt" name="body" cols="50" rows="15"></textarea>
+                
+                <input type="submit" class="bt greenthm" value="Enregistrer"/>
+                                
+            </form>
+            </div>
+       </div>
+        
+    </div>
+
+    <!-- Position Listing -->
+    <div id="module-position" class="module">
+        
+        <!--filtre-->
+        <div class="module-ctrl">
+            <!-- sort positions -->
+            <div class="sort">
+                <span>Filtrer par&nbsp;:&nbsp;</span>
+                <form id="sort-pos">
+                <div class="sortby">
+                <!--<label>Trier par</label>-->
+                <select name="sort-1">
+                    <option  selected disabled>Date</option>
+                    <option value="sort-1-2">Plus R&eacute;cent</option>
+                    <option value="sort-1-2">Plus Ancien</option>
+                </select>
+                </div>
+                <input type="submit" value="ok"/>                        
+                </form>
+            </div>
+        </div>
+
+        <!-- list -->
+        <div id="position-list" class="grid-list">
+
+        </div>
+    </div>
+    
+    <!-- Reaction Listing-->
+    <div id="module-react" class="module">
+        
+        <!--filtre-->
+        <div class="module-ctrl">
+            <!-- sort reactions -->
+            <div class="sort">
+                <span>Filtrer par&nbsp;:&nbsp;</span>
+                <form id="sort-react">
+                <div class="sortby">
+                <select name="sort-1">
+                    <option  selected disabled>Date</option>
+                    <option value="sort-1-2">Plus R&eacute;cent</option>
+                    <option value="sort-1-2">Plus Ancien</option>
+                </select>
+                </div>
+                <input type="submit" value="ok"/>                        
+                </form>
+            </div>
+        </div>
+
+        <!-- list -->
+        <div id="react-list" class="grid-list">
+
+        </div>
+    </div>
+    
+    <!-- Config application-->
+    <div id="module-config" class="module" style="display: none">
+        
+        <div class="editor">
+            <form id='configform'>                
+            <div class='config-arg'>
+                <fieldset name='configarg'>
+                    <legend>Argument Max Length</legend>
+
+                        <label class="label">Point principal</label>                            
+                        <input type="text" name="argmaxtitle" class="txt"/>
+
+                        <label class="label">Contenu</label>
+                        <input type="text" name="argmax" class="txt"/>
+                </fieldset>                    
+            </div>
+            <div class='config-topic'>
+                <fieldset name='configtopic'>
+                    <legend>Topic Max Length</legend>
+
+                        <label class="label"></label>
+                        <input type="text" name="" class="txt"/>
+
+                        <label>Contexte</label>
+                        <input type="text" name="" class="txt"/>
+                </fieldset>                    
+            </div>
+
+            <input type="submit" class="bt greenthm" value="Enregistrer"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div id="foot" class="footer">
+   <ul>
+        <li>
+            <a href="http://www.doxa.me.pn/license.txt">
+                &copy; Karim Cheratt
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- POP -->
+<div id="div-filter" style="display:none">
+    <div id="filter"></div>
+</div>
+
+<script type="text/javascript" src="../data/data-admin.js"></script>
+<script type="text/javascript" src="../js/admintopic.js"></script>
+<script type="text/javascript" src="../js/adminpos.js"></script>
+<script type="text/javascript" src="../js/adminreact.js"></script>
+
+<script>
+    $(document).ready(function(){
+        
+        var old = null;        
+        $("#modulenav").children('input[name="module"]').each(function() {
+            
+            this.onchange = function(){   
+                
+                $(this).toggleClass("check");
+                $(old).toggleClass("check");                                      
+                document.getElementById(old.value).style.display = "none";
+                document.getElementById(this.value).style.display = "block";
+                old = this;
+            };
+            
+            if(this.checked){
+                old = this;
+                $(this).toggleClass("check");
+            }else{
+                document.getElementById(this.value).style.display = "none";
+            }
+        });
+        
+        // close editor (X)
+        $(".close").each(function(){            
+            this.onclick = function(){
+                document.getElementById('div-filter').style.display = "none";
+                $(this).parent().hide();
+                var showDiv = this.getAttribute("data-show");            
+                if(showDiv){
+                    document.getElementById(showDiv).style.display = "block";                
+                };
+            };
+        });
+        
+        
+        
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<!-- 
+*************************************************************************
+Released under MIT License : http://karimcheratt.me.pn/license.txt
+***************************************************************************
+-->
+<html>
+<head>
+    <title>Doxa - Topic</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    
+    <!---->
+    <script type="text/javascript" 
+            src="../../all/js/vendor/shorten/shorten.1.0.js"></script>
+            
+    <script type="text/javascript" 
+            src="../../all/js/vendor/cookie/jquery.cookie.js"></script>
+    
+
+    <!--global styling-->    
+    <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Roboto'/>
+    <link rel="stylesheet" type="text/css" href="../../all/css/frame.css"/>
+    <link rel="stylesheet" type="text/css" href="../../all/css/form.css"/>
+    
+    <!--topic styling-->
+    <link rel="stylesheet" type="text/css" href="../css/topic.css"/>
+    
+</head>
+<body>
+    
+    <!-- HEADER -->
+    <div class="headbar">
+        <div class="header">            
+        <h1 class="logo">
+            <a href="home.html">Doxa</a>
+            <span>dev</span>
+        </h1>
+            
+        <!--Application Menu--> 
+        <ul class="menu appmenu">
+            <li>                
+                <div id="appmenu-icon" class="icon-menu openmenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <!--<label>menu</label>-->
+                </div>
+                
+                <ul class="block-arrow top-arrow">
+                    <li>
+                        <a href="#">Technologie</a>
+                    </li>
+                    <li>
+                        <a href="#">Culture</a>
+                    </li>
+                    <li>
+                        <a href="#">Science</a>
+                    </li>
+                    <li>
+                        <a href="#">Economie</a>
+                    </li>
+                    <li>  
+                        <a href="#">Politique</a>
+                    </li>                    
+                    <li>  
+                        <a href="#">Sport</a>
+                    </li>
+                    <li>
+                        <a href="#">Societe</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+            
+        <!-- Header Link -->
+        <ul class="headlink">
+            <li><a href="../index.html">Sitemap</a></li>
+            <li><a href="#">About</a></li>            
+            <li>     
+                <!-- if connected 
+                <ul id="dash" class="menu headmenu">
+                    <li>
+                        <label class="openmenu boardlink icon-user"></label>                
+                        <ul class="block-arrow top-arrow">
+                            <li><a href="#" 
+                                   onclick="alert('this section is in development')">
+                                    Dashboard</a>
+                            </li>
+                            <li><a id="logout" href="#">Deconnection</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                -->
+                <!-- If Not Connected -->
+                <button id="getlogform" class="orange">Participer au debat</button>
+                
+            </li>
+        </ul>
+        
+        </div>
+    </div>
+    
+    <!--required javascript/cookie message--> 
+    <div id="msgrequired" class="msg-required">
+        <h2 class="cart">JavaScript Required</h2>
+    </div>
+    
+    <!--app-->
+    <div id="app" style="display:none">
+        
+    <!-- CONTAINER -->        
+    <div class="container">
+        
+        <!-- TOPIC -->
+        <div id="topic" class="topic cart" data-topic="123">
+            <!-- ajax content--> 
+        </div>
+        
+        <!-- EDITOR -->
+        <div id="editdiv">
+
+            <!--open button-->
+            <label id="openform" class="openform bt blthm">
+                Participer au debat
+            </label>
+
+            <!--form-->
+            <div id="poseditor"  style="display:none">
+
+                <div class="editor cart">
+                <span class="close">X</span>
+                
+                <form id="posform">
+                    <input name="topic" type="hidden" value="1"/>
+                    
+                    <div id="checkpos" class="checkopt">
+                    <input id="check-lpos" value="left" name="pos" type="radio"/>
+                    <label for="check-lpos" class="pos">
+                    <span class="icon-check"></span>Emacs</label>
+
+                    <input id="check-rpos" value="right" name="pos" type="radio"/>
+                    <label for="check-rpos" class="pos">
+                    <span class="icon-check"></span>Vim</label>
+                    </div>
+
+                    <div>
+                        <label class="label">Point Principal</label>
+                        <!--<input type="text" class="txt" name="argtitle"/>-->
+                        <textarea maxlength="120" class="txt" 
+                                  name="poshead">max 120 characters</textarea>
+
+                        <label class="label">Argument</label>
+                        <textarea maxlength="1000" class="txt" name="body" 
+                                rows="15">max 1000 characters</textarea>
+
+                        <!--send form-->
+                        <div class="sendform">
+
+                            <input type="submit" value="Envoyer" 
+                                   name="submit" class="bt blthm"/>
+
+                            <div class="formload">
+                                <span class="icon-load"></span>
+                            </div>
+                        </div>  
+                    </div>
+                            
+                </form>                    
+                </div>                
+            </div>
+            
+            <!--reaction editor -->
+            <div id="reactor">                
+                <div class="editor">
+                <span class="close" onclick="hide.call(this,'reactor');">X</span>
+                    
+                <form id="reactform">                    
+                    <input name="posid" type="hidden" value="0"/>
+                    
+                <div class="checkopt">
+                    <input id="check-yes" value="yes" name="react" 
+                           type="radio"/>
+                    <label for="check-yes" class="pos">
+                    <span class="icon-check"></span>
+                        Argument
+                    </label>
+
+                    <input id="check-no" value="not" name="react" 
+                           type="radio"/>
+                    <label for="check-no" class="pos">
+                    <span class="icon-check"></span>
+                    Contre-Argument
+                    </label>
+                </div>
+                 
+                <label class="label">Argument</label>
+                <textarea maxlength="1000" class="txt" name="body" 
+                        rows="15">max 1000 characters</textarea>
+                
+                 <!--send form-->
+                <div class="sendform">
+                    <input type="submit" value="Envoyer" 
+                           name="submit" class="bt blthm"/>
+
+                    <div class="formload">
+                        <span class="icon-load"></span>
+                    </div>
+
+                </div>
+                 
+                </form>
+                
+                </div>
+            </div>
+            
+            <script type="text/javascript" src="../js/poster.js"></script>
+            <script type="text/javascript">
+                (function(){
+                    var b = document.getElementById('openform');
+                    var editor = document.getElementById('poseditor');
+
+                    b.onclick = function(){                    
+                        this.style.display = 'none';
+                        editor.style.display = 'block';
+                    };
+
+                    $(editor).find('span.close').on('click' ,function(){
+                        editor.style.display = 'none';
+                        b.style.display = 'block';
+                    });
+                })();                
+            </script>
+        </div>
+        
+        <!-- FLOW NAVIGATION -->
+        <ul id="flownav" class="flownav">
+            <li>                
+                <input id="fleft" value="flowleft" name="flownav" 
+                       type="radio" checked/>
+                <label for="fleft">
+                    <!--<span class="thin-arrow-up"></span>-->
+                    <span class="thin-arrow-down"></span>
+                    EMACS
+                </label>                                
+            </li>            
+            <li>                             
+                <input id="fright" value="flowright" name="flownav" 
+                       type="radio"/>
+                <label for="fright">
+                    <!--<span class="thin-arrow-up"></span>-->
+                    <span class="thin-arrow-down"></span>
+                    VIM
+                </label>                
+            </li>
+        </ul>
+        
+        <!-- FLOW CONTENT -->
+        <div id="flow" class="flow">
+            
+            <div id="flowleft">
+                <!-- ajax content-->
+            </div>
+            
+            <div id="flowright">
+                <!-- ajax content-->
+            </div>
+        </div>
+       
+    </div>
+
+    </div>
+    
+    <!-- FOOTER -->
+    <div id="foot" class="footer">
+        <ul>
+            <li>
+                <a href="http://karimcheratt.me.pn/license.txt">
+                &copy; Karim Cheratt
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <!--modal box-->
+    <div id="div-filter">
+        <div id="filter"></div>
+        
+        <!--login box-->
+        <div id="logindiv" style="display:none">
+            <span class="close" onclick="closeBox.call(this);">x</span>
+            
+            <!--login-->
+            <div id="loginbox" class="loginform modalbox">                
+                
+                
+                <span class="changebox" 
+                      onclick="changeBox.call(this,'signinbox');">Créer un Compte</span>
+                
+                <h1>Connection</h1>
+                
+               <form id="loginform" onsubmit="return false;">
+                <label>Utilisateur</label>
+                <input type="text" class="txt"/>
+                <br/>
+                <label>Mot de passe</label>
+                <input type="text" class="txt"/>
+                
+                <!--send form-->
+                <div class="sendform">
+
+                    <input type="submit" value="Se Connecter" 
+                           name="submit" class="bt blthm"/>
+
+                    <div class="formload">
+                        <span class="icon-load"></span>
+                    </div>
+                </div>
+                </form>
+                
+                
+            </div> 
+            
+            <!--sign in-->
+            <div id="signinbox" class="loginform modalbox" style="display:none">
+                <!--<span class="close" onclick="closeBox.call(this);">x</span>-->
+                
+                <span class="changebox" 
+                      onclick="changeBox.call(this,'loginbox');">J'ai un Compte</span>
+                
+                <h1>S'inscrire</h1> 
+                
+               <form id="signinform" onsubmit="return false;">
+                <label>Nom</label>
+                <input type="text" class="txt"/>
+                <br/>
+                
+                <label>Prénom</label>
+                <input type="text" class="txt"/>
+                <br/>
+                
+                <label>Courriel</label>
+                <input type="text" class="txt"/>
+                <br/>
+                
+                <label>Mot de passe</label>
+                <input type="text" class="txt"/>
+                <br/>
+                
+                <label>Confirmer Mot de passe</label>
+                <input type="text" class="txt"/>
+                
+                <!--send form-->
+                <div class="sendform">
+
+                    <input type="submit" value="S'inscrire" 
+                           name="submit" class="bt blthm"/>
+
+                    <div class="formload">
+                        <span class="icon-load"></span>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <script type="text/javascript" src="../../all/js/login.js"></script>
+            
+            <script type="text/javascript">
+                function changeBox(divId){
+                    this.parentNode.style.display = 'none';
+                    document.getElementById(divId).style.display = 'block';
+                }
+                function closeBox(){
+                    this.parentNode.style.display = 'none';
+                    document.getElementById('div-filter').style.display = 'none';
+                    
+                    var collect = this.parentNode.getElementsByClassName('badmsg');
+                    
+                    for (var i = 0, max = collect.length; i < max; i++) {
+                        collect[i].style.display = "none";
+                    }
+                }
+        
+                document.getElementById('getlogform').onclick = function(){
+                    document.getElementById('div-filter').style.display = 'block';
+                    document.getElementById('logindiv').style.display = 'block';
+                    document.getElementById('loginbox').style.display = 'block';
+                    document.getElementById('signinbox').style.display = 'none';
+                };
+                
+            </script>
+        </div>
+    </div>
+    
+<!-- For Dev Only -->
+<script type="text/javascript" src="../data/data-topic.js"></script>
+<script type="text/javascript" src="../js/topic.js"></script>
+<script type="text/javascript" src="../../all/js/dialogue.js"></script>
+
+<script type="text/javascript">
+    
+    function hide(target){
+        if(target === 'ajaxmsg'){            
+            this.style.display='none';
+            document.getElementById('div-filter').style.display='none';
+        }
+        else if(target === 'reactor'){
+            document.getElementById('reactor').className = '';
+        }
+
+    }
+                
+    /***********************************************/
+    var cookie = document.location.host /* online */ ? navigator.cookieEnabled :true ;
+    msgrequired = document.getElementById('msgrequired');
+    if(cookie){
+         //remove msgrequired
+        msgrequired.style.display = "none";
+        document.getElementById('app').style.display = "block";
+
+    }
+    else{
+         // change mesgrequired        
+         var msg = '<h2 class="cart">Cookies Required</h2>';
+         msgrequired.innerHTML = msg;
+    }
+    
+        
+    
+    
+    
+    // Switcher State
+    /**/
+    (function(){
+        var instate = function(){
+                document.getElementById('logform').style.display = 'none';
+                document.getElementById('editdiv').style.display = 'block';
+                document.getElementById('dash').style.display = 'block';
+            },
+
+        outstate = function(){
+            document.getElementById('logform').style.display = 'block';
+            document.getElementById('editdiv').style.display = 'none';
+            document.getElementById('dash').style.display = 'none';
+        };
+
+        
+        
+       
+    })();
+    
+    
+    (function(){
+        var t , iconPath = '../../all/icon/';
+        var icon = ['check.png',
+                    'thin-arrow-down.png',
+                    'heart.png','edit.png',
+                    'load.gif','user.png','success-fill.png'];
+                
+        $(icon).each(function(){
+            t = document.createElement('IMG');
+            t.src = iconPath + this ;
+        });
+        
+    })();
+    
+</script>
+    
+</body>
+</html>

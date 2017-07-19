@@ -1,0 +1,68 @@
+.welcome{
+    margin-top:300px;    
+    text-align:center;
+}
+.welcome h2{
+    padding:25px 0;
+    text-transform:uppercase;
+    background:#fff;	
+    box-shadow: 0 0 1px #335B6C;
+    border-radius:3px;
+    color:#333;
+}
+.tplist{
+    margin-top:30px;
+}
+.tplist > div{
+    display:inline-block;
+    vertical-align:top;    
+    width:40%;
+    margin:1%;
+}
+
+/*** topic liste ***/
+.grid{
+    padding:20px 30px;
+    margin-bottom:25px;
+    text-align:left;
+    position:relative;
+}
+.grid h3{
+    margin:0 0 10px 0;
+    padding:0 0 10px;
+    border-bottom:1px dotted #aaa;
+}
+.grid p{
+    line-height:1.5;
+    font-size:16px;
+}
+.grid a{    
+    color:inherit;
+}
+.grid a:hover{
+    color:blue;
+    text-decoration:underline;
+}
+
+/*
+.tplist{
+    width:60%;
+    margin-right:3%;
+}
+.widget{
+    width:33%;
+}
+.widget div{
+    margin:0;
+    padding:0 30px;
+}
+.widget h2{
+    margin:0 25px;
+    padding:15px 0;
+}
+.widget p{
+    padding:15px 0;
+    margin:0;
+    border-top:1px dashed #aaa;
+}
+*/

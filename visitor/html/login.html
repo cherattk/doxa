@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- 
+*************************************************************************
+Released under MIT License : http://karimcheratt.me.pn/license.txt
+***********************************************************************
+ -->
+<html>
+<head>
+    <title>Doxa - Login</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../../all/css/frame.css"/>
+    <link rel="stylesheet" type="text/css" href="../../all/css/form.css"/>
+    
+    <link href='http://fonts.googleapis.com/css?family=Roboto' 
+          rel='stylesheet' type='text/css'>
+    
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="headbar">
+        <div class="header">
+                            
+            <h1 class="logo">
+                <a href="home.html">Doxa</a>
+                <span>dev</span>
+            </h1>
+            
+            <!-- Header Link -->
+            <ul class="headlink">
+                <li><a href="../index.html">Sitemap</a></li>
+                <li><a href="#">About</a></li>
+            </ul> 
+            
+        </div>
+    </div>
+    
+    <!--required javascript/cookie message-->
+    <div id="msgrequired" class="msg-required">
+        <h2 class="cart">JavaScript Required</h2>
+    </div>
+    
+    <!--app--> 
+    <div id="app" style="display:none">
+        
+    <!--CONTAINER-->
+    <div id="container" class="container">
+        
+        <!--login-->
+        <div id="loginbox" class="loginform">
+            
+            <span class="changebox" 
+                  onclick="changeBox.call(this,'signinbox');">Créer un Compte</span>
+
+            <h1>Connection</h1>
+
+           <form id="loginform">
+            <label>Utilisateur</label>
+            <input type="text" class="txt"/>
+            <br/>
+            <label>Mot de passe</label>
+            <input type="text" class="txt"/>
+            
+            <!--send form-->
+            <div class="sendform">
+
+                <input type="submit" value="Se Connecter" 
+                       name="submit" class="bt blthm"/>
+
+                <div class="formload">
+                    <span class="icon-load"></span>
+                </div>
+            </div>
+            
+            </form>
+
+
+        </div> 
+            
+        <!--sign in-->
+        <div id="signinbox" class="loginform" style="display:none">
+
+            <span class="changebox" 
+                  onclick="changeBox.call(this,'loginbox');">J'ai un Compte</span>
+
+            <h1>S'inscrire</h1> 
+
+           <form id="signinform">
+            <label>Nom</label>
+            <input type="text" class="txt"/>
+            <br/>
+
+            <label>Prénom</label>
+            <input type="text" class="txt"/>
+            <br/>
+
+            <label>Courriel</label>
+            <input type="text" class="txt"/>
+            <br/>
+
+            <label>Mot de passe</label>
+            <input type="text" class="txt"/>
+            <br/>
+            
+            <!--send form-->
+            <div class="sendform">
+
+                <input type="submit" value="S'inscrire" 
+                       name="submit" class="bt blthm"/>
+
+                <div class="formload">
+                    <span class="icon-load"></span>
+                </div>
+            </div>
+            </form>
+
+        </div>
+
+        <script type="text/javascript" src="../../all/js/login.js"></script>
+        <script type="text/javascript">
+            function changeBox(divId){
+                this.parentNode.style.display = 'none';
+                document.getElementById(divId).style.display = 'block';
+            }               
+
+        </script>
+    </div>
+    
+    </div>
+    
+    <!-- FOOTER -->
+    <div id="foot" class="footer">
+        <ul>
+            <li>
+                <a href="http://karimcheratt.me.pn/license.txt">
+                &copy; Karim Cheratt
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <script type="text/javascript">
+        
+     /***********************************************/
+    var cookie = document.location.host /* online */ ? navigator.cookieEnabled :true ;
+    msgrequired = document.getElementById('msgrequired');
+    if(cookie){
+         //remove msgrequired
+        msgrequired.style.display = "none";
+        document.getElementById('app').style.display = "block";
+
+    }
+    else{
+         // change mesgrequired        
+         var msg = '<h2 class="cart">Cookies Required</h2>';
+         msgrequired.innerHTML = msg;
+    }
+     
+    /*for dev only
+    document.getElementById('connectform').onsubmit = function(e){
+        e.preventDefault();
+        return;
+        var path = window.location.pathname;
+        var dst = path.slice(this, path.lastIndexOf('/'))+ '/topic.html';
+        window.location.replace(dst);
+    };
+    
+    */ 
+    </script>
+</body>
+    
+</html>

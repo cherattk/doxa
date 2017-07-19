@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!-- 
+*************************************************************************
+Released under MIT License : http://karimcheratt.me.pn/license.txt
+***************************************************************************
+-->
+<html>
+<head>
+    <title>Doxa - Home</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>		
+
+    <!--<link rel="icon" type="image/png" href="../../all/icon/flag.png" />-->
+    
+    <link href='http://fonts.googleapis.com/css?family=Roboto' 
+          rel='stylesheet' type='text/css'>
+          
+    <link rel="stylesheet" type="text/css" href="../../all/css/frame.css"/>
+    <link rel="stylesheet" type="text/css" href="../../all/css/form.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/home.css"/>
+    <!--<link rel="stylesheet" type="text/css" href="../any/css/icon.css"/>-->
+
+    <style type="text/css">
+        /*
+            frame.css
+        */
+    </style>
+</head>
+<body>
+    
+    <!-- HEADER -->
+    <div class="headbar">
+        <div class="header">
+            <h1 class="logo">
+                <a href="home.html">Doxa</a>
+                <span>dev</span>
+            </h1>
+            
+            <!--Application Menu--> 
+            <ul class="menu appmenu">
+                <li>                
+                    <div id="appmenu-icon" class="icon-menu openmenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <!--<label>menu</label>-->
+                    </div>
+
+                    <ul class="block-arrow top-arrow">
+                        <li>
+                            <a href="#">Technologie</a>
+                        </li>
+                        <li>
+                            <a href="#">Culture</a>
+                        </li>
+                        <li>
+                            <a href="#">Science</a>
+                        </li>
+                        <li>
+                            <a href="#">Economie</a>
+                        </li>
+                        <li>  
+                            <a href="#">Politique</a>
+                        </li>                    
+                        <li>  
+                            <a href="#">Sport</a>
+                        </li>
+                        <li>
+                            <a href="#">Societe</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <!-- Header Link -->
+            <ul class="headlink">
+                <li><a href="../index.html">Sitemap</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#" class="loglink">Connection</a></li>
+            </ul>
+            
+        </div>
+    </div>
+
+    <!--required javascript/cookie message-->
+    <div id="msgrequired" class="msg-required">
+        <h2 class="cart">JavaScript Required</h2>
+    </div>
+    
+    <div id="app" style="display:none">
+        
+        <div class="backban">
+            <img src="../../all/img/banner.png"/>
+            <h1>Plateforme de D&eacute;bats</h1>
+        </div>
+    
+    <!-- container -->
+    <div class="container">
+        
+        <div id="welcome" class="welcome">
+            
+        <h2>Top D&eacute;bats</h2>
+        
+            <!-- Topic list-->
+            <div id="tplist" class="tplist">
+
+            </div>            
+        </div>
+
+    </div>
+
+    </div>
+    
+    <!-- FOOTER -->
+    <div id="foot" class="footer">
+        <ul>
+            <li>
+                <a href="http://karimcheratt.me.pn/license.txt">
+                &copy; Karim Cheratt
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <script type="text/javascript">
+        
+    var cookie = document.location.host /* online */ ? navigator.cookieEnabled :true ;
+    if(cookie){
+         //remove msgrequired
+        document.getElementById('msgrequired').style.display = "none";
+        document.getElementById('app').style.display = "block";
+    }
+    else{
+        // change mesgrequired        
+        var msg = '<h2 class="cart">Cookies Required</h2>';
+        document.getElementById('msgrequired').innerHTML = msg;
+    }
+    
+    // dropdown menu
+    var open = document.querySelectorAll('.openmenu'),
+        max = open.length,
+        showMenu = function(e){
+                e.stopPropagation(); // to not reach document
+                this.className = this.className.trim();
+
+                var rgx = /\sshow$/;
+                if(rgx.test(this.className)){
+                    // hide menu
+                    this.className = this.className.replace(rgx, '');
+                }else{
+                    // show menu
+                    this.className += ' show';
+                }
+        };
+    
+    for (var i = 0 ; i < max; i++) {        
+        open[i].onclick = showMenu;
+    }
+        
+    /* top debats */
+         
+   (function(){
+    
+    var topicList = document.getElementById('tplist');
+    
+    var grid = '',
+        txt = "Si vous voulez utiliser un\
+                passage du Lorem Ipsum,\
+                devez être sûr qu\'il n\'y \
+                rien d'embarrassant caché dans le texte";
+
+        for (var i = 0, max = 6; i < max; i++) {
+
+            grid = '<div class="grid cart"><h3>Categorie</h3>';
+            grid += '<p><a href="topic.html">'+txt+'</a></p></div>';
+            
+            topicList.innerHTML += grid;
+        }
+        
+    })();
+    
+    
+    </script>
+</body>    
+</html>
