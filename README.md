@@ -1,4 +1,4 @@
-# Doxa
+# Doxa (Frontend)
 Plateforme de débat en ligne
 
 ##### Screenshot of Topic Page : /visitor/html/topic.html
