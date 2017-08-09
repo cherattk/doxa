@@ -1,9 +1,3 @@
-/*************************************************************************
-This content is released under the MIT License : www.doxa.com/LICENSE.txt
-    
-************* What this module do *************
-
- *****************************************************************************/
 window.doxa = window.doxa || {};
 
 window.doxa.module = {
