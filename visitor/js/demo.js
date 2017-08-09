@@ -1,7 +1,3 @@
-/**********************************************************************
-Released under MIT License : http://karimcheratt.me.pn/license.txt
-***********************************************************************/
-
 $('#logdiv').on('submit',function(e) {
     e.preventDefault();
     alert('Connection Utilisateur');

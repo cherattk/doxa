@@ -1,6 +1,3 @@
-/**********************************************************************
-Released under MIT License : http://karimcheratt.me.pn/license.txt
- **********************************************************************/
 window.doxa = window.doxa || {};
 
 window.doxa.topic = {
