@@ -19,7 +19,7 @@ window.doxa.poster = {
     
     
     /******************************************************
-                        Browser Method
+                        Action Method
     ******************************************************/
     subflowEditor : function(){
                  
